@@ -38,7 +38,6 @@ def dfs(root, find):
     e = Explore()
     s.add(temp)
     temp.set_parent(None)
-    steps = []
 
     while True:
         if s.isempty():
@@ -48,8 +47,6 @@ def dfs(root, find):
         temp = s.get()
         if e.check(temp):
             continue
-
-        steps.append(temp.val)
 
         e.add(temp)
 
@@ -61,20 +58,15 @@ def dfs(root, find):
                 temp = i
                 print("Soluiton Found:")
                 find_path(temp)
-                print(steps) 
-                sys.exit(2)
+                return
             s.add(i)
 
 def find_path(node):
     temp = node
     path = []
-    node_path = []
 
     while temp != None:
         path.append(temp.val)
-        node_path.append(temp)
         temp = temp.parent
     path.reverse()
-    node_path.reverse()
     print(path)
-    return node_path

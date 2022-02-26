@@ -39,7 +39,6 @@ def bfs(root, find):
     e = Explore()
     q.add(temp)
     temp.set_parent(None)
-    steps = []
 
     while True:
         if q.isempty():
@@ -49,8 +48,6 @@ def bfs(root, find):
         temp = q.get()
         if e.check(temp):
             continue
-
-        steps.append(temp.val)
 
         e.add(temp)
 
@@ -62,20 +59,15 @@ def bfs(root, find):
                 temp = i
                 print("Soluiton Found:")
                 find_path(temp)
-                print(steps) 
-                sys.exit(2)
+                return
             q.add(i)
 
 def find_path(node):
     temp = node
     path = []
-    node_path = []
 
     while temp != None:
         path.append(temp.val)
-        node_path.append(temp)
         temp = temp.parent
     path.reverse()
-    node_path.reverse()
     print(path)
-    return node_path

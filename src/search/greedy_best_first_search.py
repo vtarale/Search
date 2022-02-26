@@ -25,16 +25,12 @@ class Node:
 
 def find_path(found):
     path = []
-    node_path = []
     temp = found
     while temp != None:
         path.append(temp.data)
-        node_path.append(temp)
         temp = temp.parent
     path.reverse()
-    node_path.reverse()
     print(path)
-    return node_path
 
 def greedy_best_first_search(root, find):
     temp = root
@@ -48,7 +44,7 @@ def greedy_best_first_search(root, find):
         if temp == find:
             find_path(temp)
             print(f"Steps: {steps}")
-            exit(1)
+            return
 
         for node in temp.n:
             if node not in explored:
