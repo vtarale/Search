@@ -1,0 +1,1 @@
+print("Thanks for using search")
