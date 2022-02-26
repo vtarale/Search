@@ -25,12 +25,16 @@ class Node:
 
 def find_path(found):
     path = []
+    node_path = []
     temp = found
     while temp != None:
         path.append(temp.data)
+        node_path.append(temp)
         temp = temp.parent
     path.reverse()
+    node_path.reverse()
     print(path)
+    return node_path
 
 def greedy_best_first_search(root, find):
     temp = root

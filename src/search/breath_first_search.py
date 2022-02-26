@@ -69,9 +69,13 @@ def bfs(root, find):
 def find_path(node):
     temp = node
     path = []
+    node_path = []
 
     while temp != None:
         path.append(temp.val)
+        node_path.append(temp)
         temp = temp.parent
     path.reverse()
+    node_path.reverse()
     print(path)
+    return node_path
