@@ -25,7 +25,7 @@ a.n = [other nodes]
 ## searching
 ```python
 # Ex
-bfs.breath_first_search(a, h)
+bfs.bfs(a, h)
 ```
 ## Running
  ```bash
