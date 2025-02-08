@@ -31,6 +31,7 @@ def find_path(found):
         temp = temp.parent
     path.reverse()
     print(path)
+    return path
 
 def a_star_search(root, find):
     temp = root
@@ -42,9 +43,9 @@ def a_star_search(root, find):
     while True:
         total = []
         if temp == find:
-            find_path(temp)
+            h = find_path(temp)
             print(f"Steps: {steps}")
-            return
+            return h
 
         for node in temp.n:
             if node not in explored:
